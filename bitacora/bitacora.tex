@@ -1,0 +1,250 @@
+\documentclass[oneside]{article}
+\usepackage[total={18cm, 21cm}, top=2cm, left=2cm]{geometry}
+\parindent = 0mm % sin sangría
+\usepackage{latexsym, amsmath, amssymb, amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{float}
+\usepackage{longtable, multirow, booktabs}
+\usepackage{caption}
+\usepackage{makecell}
+
+\title{Bitacora - Domótica}
+\author{
+Julio Rubén Sanic Martínez 2012-2228\\
+Alejandro Camey Mendez 201503792
+}
+
+\begin{document}
+\maketitle
+
+\section*{Semana 22-26 de Agosto}
+\begin{itemize}
+\item \textbf{Problema:} Dar confort y seguridad en los hogares por medio del IOT.
+\item \textbf{Alcances:} 
+\begin{itemize}
+\item Comunicación inalámbrica
+\item Control mediante una interfaz gráfica
+\item Envoltorio del dispositivo a base de plástico
+\item Autonomía con baterías
+\item Programación de temporizadores y alarmas
+\item Registro de actividades
+\end{itemize} 
+\item \textbf{Solución:}
+Se pretende dar solución al problema mediante los dispositivos ESP8266 y ESP32, que contienen WiFi y un stack TCP/IP completo. Programados mediante Arduino o MicroPython, utilizando el protocolo de red M.Q.T.T. (Message Queuing Telemetry Transport).
+\\
+La cubierta se pretende que sea de plástico, por tanto, la impresión 3D es imprescindible. Y, para la interfaz gráfica se planean soluciones mediante el uso de Python y JavaScript.
+\end{itemize}
+\textbf{\Large Pilares}
+\begin{itemize}
+\item \textbf{Recursos humanos virtuales:}
+\begin{itemize}
+\item Impresión 3D en terceros.
+\item Fabricación de placas electrónicas por medio de terceros.
+\end{itemize}
+\item \textbf{Activos Ajenos:}
+\begin{itemize}
+\item Servidores en AWS (Amazon Web Services)
+\end{itemize}
+\end{itemize}
+\newpage
+
+\section*{Semana, 29 de Agosto - 02 de Septiembre}
+\subsection*{Inversion del protótipo}
+
+\begin{table}[H]
+\centering
+\begin{longtable}[c]{llll}
+\toprule
+Descripción & cantidad & precio unitario (Q) & total (Q) \\
+\midrule
+\multicolumn{4}{c}{Interruptor}\\
+\hline
+ESP8266 & 1 & 50 & 50 \\
+Batería de litio 1800mAh & 4 & 40 & 160 \\ 
+TRIAC MAC97A6 & 2 & 4 & 8 \\
+Optoacoplador MOC3021 & 2 & 5 & 10 \\
+Resistencia 1/4 W 1k$\Omega$ & 2 & 0.5 & 1 \\
+Resistencia 1/4 W 10k$\Omega$ & 1 & 0.5 & 0.5 \\
+Resistencia 1/4 W 330$\Omega$ & 1 & 0.5 & 0.5 \\
+Capacitor cerámico 104 & 1 & 1 & 1 \\
+Pulsador normalmente abierto & 2 & 1 & 2 \\
+Sujetador de 4 baterías AA & 1 & 6 & 6 \\
+Transformador 12V 1A c/tab & 1 & 62 & 62 \\
+\hline
+total & & & 301\\
+\hline
+\multicolumn{4}{c}{Detector de Objetos}\\
+\hline
+ESP8266 & 1 & 50 & 50 \\
+Resistencia 1/4 W 1k$\Omega$ & 1 & 0.5 & 0.5 \\
+Resistencia 1/4 W 10k$\Omega$ & 1 & 0.5 & 0.5 \\
+Capacitor cerámico 104 & 1 & 1 & 1 \\
+Pulsador normalmente abierto & 2 & 1 & 2 \\
+Sensor Ultrasónico HC-SR05 & 1 & 25 & 25 \\
+\hline
+total & & & 79\\
+\hline
+\multicolumn{4}{c}{Caja de sensores}\\
+\hline
+ESP32 & 1 & 100 & 100 \\
+Sensor de llama & 1 & 16 & 16 \\
+Sensor de gas butano MQ-9 & 1 & 34 & 34 \\
+Sensor de temperatura LM35 & 1 & 21 & 21 \\
+\hline
+total & & & 171\\
+\hline
+
+FT232R & 1 & 36 & 36 \\
+Horas-hombre (electrónica) & 20 & 15 & 300 \\
+Horas-hombre (programación) & 80 & 15 & 1200 \\
+\hline
+TOTAL & & & 2087 \\
+\hline
+ 
+\end{longtable}
+\caption*{Inversión protótipo}
+\end{table}
+
+
+\subsection*{Inversión Total}
+\begin{table}[H]
+\centering
+\begin{longtable}[c]{llll}
+\toprule
+Descripción & cantidad & precio unitario (Q) & total (Q) \\  
+\midrule
+
+Múltimetro modelo MUT-33 marca TRUPER & 1 & 175 & 175 \\
+Múltimetro modelo MUT-830 marca TRUPER & 1 & 100 & 100 \\
+Protoboard 830 puntos & 4 & 38 & 152 \\
+Fuente de Alimentación 60 W & 1 & 115 & 115 \\
+Escritorio & 1 & 600 & 600 \\
+Silla & 1 & 200 & 200 \\
+Protótipo & & & 2087 \\
+\hline
+TOTAL & & & 3429\\
+\hline 
+
+\end{longtable}
+\caption*{Inversión Inicial }
+\end{table}
+
+\subsection*{Costos Variables y Costos Fijos}
+\begin{table}[H]
+\centering
+
+\begin{longtable}[c]{llll}
+\toprule
+\multicolumn{2}{c}{Costos Fijos} & \multicolumn{2}{c}{Costos Variables} \\
+\midrule
+Descripción & total & Descripción & total \\
+\hline 
+Renta Garage & 600 & ESP8266 Interruptor &  166 \\
+Renta de Servidor para Broker M.Q.T.T \\+ pago de hosted zones & 50 & ESP8266 Detector & 79  \\
+Renta de Servidor para \\ página web y publicidad & 50 & ESP8266 Caja de sensores & 171 \\
+Publicidad en Google & 100 & Empaque & 5 \\
+Factura de Electricidad & 100 & Envío & 15 \\
+Sueldo (Fin de semana) & 1500 & &\\
+Amortización inversión a 2 años & 143 & & \\
+\hline
+TOTAL & 2543 &  TOTAL & 436 \\
+\hline
+\end{longtable}
+\caption*{Costos Variables y Costos Fijos}
+\end{table}
+
+\subsection*{Punto de Equilibrio}
+Ecuación de punto de equilibrio:
+$$Q = \frac{CF}{(P-CV)}$$
+Donde:
+\begin{itemize}
+\item $CF$ son los costos fijos
+\item $CV$ son los costos variables
+\item $P$ es el precio del producto 
+\end{itemize}
+Considerando
+\begin{itemize}
+\item $CF = Q2543$
+\item $CV = Q436$
+\item $P = CV * 1.5 = Q654$
+\end{itemize}
+Da como resultado:
+$$Q = \frac{2543}{654-436}=11$$
+Como conclusión, se tienen que vender 11 juegos de dispositivos para cubrir los gastos y el sueldo. Después de eso, se genera ganancia.
+
+\newpage
+\section*{Semana, 05 de septiembre - 09 de Septiembre}
+Se realizó un cronógrama de actividades, mostrando el avance en semanas anteriorres y una semana de anticipo.  
+\subsection*{Cronógrama de actividades}
+
+\begin{table}[H]
+\begin{longtable}[c]{p{5cm} p{9cm}}
+\toprule
+Fecha & Actividad \\
+\midrule
+Agosto 22-26 & Definición y Alcances del proyecto \\
+\hline
+Agosto 29- Septiembre 02 & Punto de Equilibrio \\
+\hline
+Septiembre 05 - 09 & Pruebas de alimentación (baterías) y configuración inicial del broker Mosquitto en la nube\\
+\hline
+Septiembre 12 - 16 & Programación inicial en MicroPython/Arduino y análisis de interfaz de usuario \\ 
+\hline 
+Septiembre 19 - 23 & Programación de sensores y pruebas del broker con un cliente M.Q.T.T \\
+\hline
+
+\end{longtable}
+\caption*{Cronograma de actividaes}
+\end{table}
+
+\subsection*{Configuración del broker Mosquitto}
+El alojamiento del broker se realizó en una instancia E2C en AWS:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/broker_aws.jpg}
+\end{figure}
+ 
+Los parámetros de conexión son los siguientes:
+\begin{itemize}
+\item IP estática: 44.196.164.116
+\item Puerto: 1883
+\end{itemize}
+
+
+La conexión por el momento no es segura, es decir, sin cifrado SSL y la única seguridad que tiene es que no se permiten usuarios anónimos y se requiere ingresar con usuario y contraseña (tiene que estar registrado).
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{images/conf_inicial_broker.jpg}
+\end{figure}
+
+\subsection*{Pruebas de alimentación con baterías}
+Se probó el ESP8266 sin ninguna placa de desarrollo, es decir, solamente el encapsulado. Para eso, se le agregó un regulador, el circuito básico para programarlo y baterías AA para la alimentación.\\\\
+Se midió el consumo de corriente sin ningún otro componente y luego con 4 leds de salida, como se muestra a continuación:
+	
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.1]{images/prueba_bateria_1.jpg}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.1]{images/prueba_bateria_2.jpg}
+\end{figure}
+
+Lamentablemente el consumo de corriente es muy alto y requeriría un juego de baterías de alta capacidad, haciendo el producto muy voluminoso y costoso, por tanto, no sería atractivo comercialmente. 
+\\\\
+Por ejemplo, la autonomía con baterías de 3000mAh y un consumo promedio de 75mA sería:
+
+$$t = \frac{3000mAh}{75mA}=40horas$$
+
+Como conclusión, no se van a utilizar baterías para la alimentación. Se va a optar para el ``ESP8266 interruptor'' un transformador y para el ``ESP8266 sensores'' y ``ESP8266 detector'', alimentación por cargador.
+
+\newpage
+\section*{Semana, 12 de septiembre - 16 de Septiembre}
+
+
+  
+
+\end{document}
