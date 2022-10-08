@@ -2,7 +2,7 @@ void ConnectWiFi_STA(bool useStaticIP = false){
   delay(10);
   Serial.println("");
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
+  WiFi.begin(ssid, password, 11);
   if (useStaticIP) WiFi.config(ip, gateway, subnet);
   while(WiFi.status() != WL_CONNECTED){
     delay(250);

@@ -1,6 +1,6 @@
 const char* MQTT_BROKER_ADRESS = "44.196.164.116";
 const uint16_t MQTT_PORT = 1883;
-const char* MQTT_CLIENT_NAME = "ESP8266Client_1";
+const char* MQTT_CLIENT_NAME = "ESP8266Client_2";
 const char* MQTT_USER = "alejandro";
 const char* MQTT_PASSWORD = "1234";
 
@@ -8,7 +8,7 @@ WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 
 void SuscribeMqtt(){
-  mqttClient.subscribe("hello");
+  mqttClient.subscribe("temp");
 }
 
 String content = "";
@@ -27,5 +27,5 @@ String payload;
 void PublishMqtt(unsigned long data){
   payload = "";
   payload = String(data);
-  mqttClient.publish("hello", (char*)payload.c_str());
+  mqttClient.publish("temp", (char*)payload.c_str());
 }

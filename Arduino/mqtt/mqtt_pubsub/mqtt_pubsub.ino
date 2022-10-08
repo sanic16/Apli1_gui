@@ -16,6 +16,6 @@ void setup(void){
 
 void loop(void){
   HandleMqtt();
-  PublishMqtt(millis());
+  PublishMqtt(analogRead(A0));
   delay(1000);
 }
