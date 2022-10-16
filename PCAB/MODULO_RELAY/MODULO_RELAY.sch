@@ -1,0 +1,256 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+12V #PWR02
+U 1 1 6345FFCE
+P 4500 2450
+F 0 "#PWR02" H 4500 2300 50  0001 C CNN
+F 1 "+12V" H 4515 2623 50  0000 C CNN
+F 2 "" H 4500 2450 50  0001 C CNN
+F 3 "" H 4500 2450 50  0001 C CNN
+	1    4500 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 6346095E
+P 4350 3800
+F 0 "#PWR01" H 4350 3550 50  0001 C CNN
+F 1 "GND" H 4355 3627 50  0000 C CNN
+F 2 "" H 4350 3800 50  0001 C CNN
+F 3 "" H 4350 3800 50  0001 C CNN
+	1    4350 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 63460E8D
+P 4700 2450
+F 0 "#FLG02" H 4700 2525 50  0001 C CNN
+F 1 "PWR_FLAG" H 4700 2623 50  0000 C CNN
+F 2 "" H 4700 2450 50  0001 C CNN
+F 3 "~" H 4700 2450 50  0001 C CNN
+	1    4700 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 63461196
+P 4650 3800
+F 0 "#FLG01" H 4650 3875 50  0001 C CNN
+F 1 "PWR_FLAG" H 4650 3973 50  0000 C CNN
+F 2 "" H 4650 3800 50  0001 C CNN
+F 3 "~" H 4650 3800 50  0001 C CNN
+	1    4650 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 6346213E
+P 5050 3150
+F 0 "R2" H 5120 3196 50  0000 L CNN
+F 1 "3.3K" H 5120 3105 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 4980 3150 50  0001 C CNN
+F 3 "~" H 5050 3150 50  0001 C CNN
+	1    5050 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2N3904 Q1
+U 1 1 634628E2
+P 5350 3400
+F 0 "Q1" H 5540 3446 50  0000 L CNN
+F 1 "2N3904" H 5540 3355 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5550 3325 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5350 3400 50  0001 L CNN
+	1    5350 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4001 D2
+U 1 1 634632D2
+P 5450 2900
+F 0 "D2" V 5404 2980 50  0000 L CNN
+F 1 "1N4001" V 5495 2980 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 5450 2725 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 5450 2900 50  0001 C CNN
+	1    5450 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 634638A8
+P 5150 2500
+F 0 "D1" H 5143 2717 50  0000 C CNN
+F 1 "LED" H 5143 2626 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 5150 2500 50  0001 C CNN
+F 3 "~" H 5150 2500 50  0001 C CNN
+	1    5150 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J1
+U 1 1 63464345
+P 4100 2900
+F 0 "J1" H 4018 2575 50  0000 C CNN
+F 1 "IN VCC" H 4018 2666 50  0000 C CNN
+F 2 "Connector:FanPinHeader_1x03_P2.54mm_Vertical" H 4100 2900 50  0001 C CNN
+F 3 "~" H 4100 2900 50  0001 C CNN
+	1    4100 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J2
+U 1 1 634651BD
+P 7350 3050
+F 0 "J2" H 7430 3092 50  0000 L CNN
+F 1 "OUT PINS" H 7430 3001 50  0000 L CNN
+F 2 "Connector:FanPinHeader_1x03_P2.54mm_Vertical" H 7350 3050 50  0001 C CNN
+F 3 "~" H 7350 3050 50  0001 C CNN
+	1    7350 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 63469BE9
+P 4800 3400
+F 0 "R1" V 4593 3400 50  0000 C CNN
+F 1 "2.2K" V 4684 3400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 4730 3400 50  0001 C CNN
+F 3 "~" H 4800 3400 50  0001 C CNN
+	1    4800 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4300 2800 4500 2800
+Wire Wire Line
+	4500 2800 4500 2450
+Wire Wire Line
+	4700 2450 4700 2800
+Wire Wire Line
+	4700 2800 4500 2800
+Connection ~ 4500 2800
+Connection ~ 4700 2800
+Wire Wire Line
+	4950 3400 5050 3400
+Wire Wire Line
+	5050 3300 5050 3400
+Connection ~ 5050 3400
+Wire Wire Line
+	5050 3400 5150 3400
+Wire Wire Line
+	4300 2900 4650 2900
+Wire Wire Line
+	4650 2900 4650 3400
+Wire Wire Line
+	4300 3000 4350 3000
+Wire Wire Line
+	4350 3000 4350 3650
+Wire Wire Line
+	4650 3800 4650 3650
+Wire Wire Line
+	4650 3650 4350 3650
+Connection ~ 4350 3650
+Wire Wire Line
+	4350 3650 4350 3800
+Wire Wire Line
+	5450 3600 5450 3650
+Wire Wire Line
+	5450 3650 4650 3650
+Connection ~ 4650 3650
+Wire Wire Line
+	5150 2800 5150 2750
+Wire Wire Line
+	5150 2750 5450 2750
+Wire Wire Line
+	4700 2800 4850 2800
+Wire Wire Line
+	5900 2550 5450 2550
+Wire Wire Line
+	5450 2550 5450 2750
+Connection ~ 5450 2750
+Wire Wire Line
+	5450 3050 5450 3150
+Wire Wire Line
+	5050 3000 5050 2800
+Connection ~ 5050 2800
+Wire Wire Line
+	5050 2800 5150 2800
+Wire Wire Line
+	5550 3250 5550 3150
+Wire Wire Line
+	5550 3150 5450 3150
+Connection ~ 5450 3150
+Wire Wire Line
+	5450 3150 5450 3200
+$Comp
+L Device:R R3
+U 1 1 63487919
+P 5250 3000
+F 0 "R3" H 5320 3046 50  0000 L CNN
+F 1 "220" H 5320 2955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 5180 3000 50  0001 C CNN
+F 3 "~" H 5250 3000 50  0001 C CNN
+	1    5250 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2500 4850 2500
+Wire Wire Line
+	4850 2500 4850 2800
+Connection ~ 4850 2800
+Wire Wire Line
+	4850 2800 5050 2800
+Wire Wire Line
+	5300 2500 5300 2850
+Wire Wire Line
+	5300 2850 5250 2850
+Wire Wire Line
+	5250 3150 5450 3150
+Wire Wire Line
+	7150 2950 7150 2350
+Wire Wire Line
+	7150 2350 6200 2350
+Wire Wire Line
+	7050 3250 7050 3050
+Wire Wire Line
+	7050 3050 7150 3050
+Wire Wire Line
+	6950 2650 6950 3150
+Wire Wire Line
+	6950 3150 7150 3150
+$Comp
+L Relay:SANYOU_SRD_Form_C K1
+U 1 1 634689F2
+P 6100 2950
+F 0 "K1" H 6530 2996 50  0000 L CNN
+F 1 "SANYOU_SRD_Form_C" H 6530 2905 50  0000 L CNN
+F 2 "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" H 6550 2900 50  0001 L CNN
+F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 6100 2950 50  0001 C CNN
+	1    6100 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2550 5900 2650
+Wire Wire Line
+	5550 3250 5900 3250
+Wire Wire Line
+	6300 3250 7050 3250
+Wire Wire Line
+	6200 2350 6200 2650
+Wire Wire Line
+	6950 2650 6400 2650
+$EndSCHEMATC
