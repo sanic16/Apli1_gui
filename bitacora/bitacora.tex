@@ -9,6 +9,8 @@
 \usepackage{longtable, multirow, booktabs}
 \usepackage{caption}
 \usepackage{makecell}
+\usepackage{hyperref}
+\usepackage{listings}
 
 \title{Bitacora - Domótica}
 \author{
@@ -243,6 +245,219 @@ Como conclusión, no se van a utilizar baterías para la alimentación. Se va a 
 
 \newpage
 \section*{Semana, 12 de septiembre - 16 de Septiembre}
+Para esta fase se realizó el esquemático de nuestro ESP8266-interruptor en kicad, colocando los footprints de los components que se van a utilizar y se realizó la primera versión de nuestro cliente mqtt web.
+\subsection*{Esquemático ESP8266-Interruptor}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{images/esquematico.jpg}
+\caption{Esquemático ESP8266-Interruptor}
+\end{figure}
+
+Selección de footprints de acuerdo a componentes THT estándar:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/footprint1.jpg}
+\caption{Footprint relay}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/footprint2.jpg}
+\caption{Footprint transistor 2n3904}
+\end{figure}
+
+\pagebreak
+También se realizó la primera versión de una aplicación web para comunicarse con nuestros dispositivos mediante WebSockets y MQTT.
+
+\subsection*{Eclipse Paho JavaScript Client}
+Paho JavaScript Client es una librería para clientes usando navegadores web en JavaScript, que utiliza WebSockets para conectarse al Broker MQTT.
+\\\\
+Entre sus principales características tenemos:
+\begin{itemize}
+\item Soporte para MQTT 3.1
+\item Soporte para MQTT 3.1.1
+\item Certificados SSL/TLS
+\item Reconexión automática
+\item Alta disponibilidad
+\item Soporte para WebSockets
+\end{itemize}
+
+Su instalación consiste en los siguientes pasos:
+\begin{enumerate}
+\item Copiar todo el código fuente de la librería https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js en un archivo JavaScript con el nombre mqttws31.js
+\item Hacer referencia de mqttws31.js en la archivo html con \verb@<script src="js/mqttws31.js"></script>@
+\end{enumerate}
+\subsection*{Bootstrap}
+Para darle un buen diseño a la página web y además hacerla responsive, se utiliza Bootstrap 5 y su utilización es la siguiente:
+\begin{enumerate}
+\item Obtener Bootstrap a través de un CDN (Content Delivery Network): \url{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css}
+\item Hacer referencia a Bootstrap en la etiqueta \verb@<head>@ con\\ \verb%<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"% \\
+\verb%rel="stylesheet">%
+\end{enumerate}
+
+\subsection*{amCharts 5}
+amCharts 5 es una librería JavaScript para la visualización de datos, tiene diferentes tipos de gráficos:
+\begin{itemize}
+\item X/Y
+\begin{itemize}
+\item Área
+\item Barras y columnas
+\item burbujas y dispersión
+\item etc.
+\end{itemize}
+\item Porcentaje
+\item mapas geográficos
+\item Mucho más
+\end{itemize}
+
+Su utilización consiste en agregar referencias a cdns en la etiqueta \verb@<head>@:
+\begin{lstlisting}
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+\end{lstlisting}
+
+\subsection*{Archivo HTML}
+El código en el archito html es:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domotica Apli1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <!--opcion 1-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+    type="text/javascript"></script>-->
+    <!--opcion 2-->
+    <script src="js/mqttws31.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" 
+                role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 bg-primary text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led5','ON')">GPIO5 ON</button>
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led5','OFF')">GPIO5 OFF</button>
+            </div>
+        </div>
+        <div class="col-sm-4 bg-dark text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-dark btn-block"
+                onclick="switchGPIO('Led4','ON')">GPIO4 ON</button>
+                <button type="button" class="btn btn-dark btn-block"
+                onclick="switchGPIO('Led4','OFF')">GPIO4 OFF</button>
+            </div>
+        </div>
+        <div class="col-sm-4 bg-primary text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led0','ON')">GPIO0 ON</button>
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led0','OFF')">GPIO0 OFF</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-4 bg-primary text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led2','ON')">GPIO2 ON</button>
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led2','OFF')">GPIO2 OFF</button>
+            </div>
+        </div>
+        <div class="col-sm-4 bg-dark text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-dark btn-block"
+                onclick="switchGPIO('Led14','ON')">GPIO14 ON</button>
+                <button type="button" class="btn btn-dark btn-block"
+                onclick="switchGPIO('Led14','OFF')">GPIO14 OFF</button>
+            </div>
+        </div>
+        <div class="col-sm-4 bg-primary text-white">
+            <div class="d-grid">
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led12','ON')">GPIO12 ON</button>
+                <button type="button" class="btn btn-primary btn-block"
+                onclick="switchGPIO('Led12','OFF')">GPIO12 OFF</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div id="chartdiv"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="chartdiv2"></div>
+      </div>
+    </div>
+
+    </div>
+       
+    <script src="js/iot_mqtt.js"></script>
+    <script src="js/graficas.js"></script>
+
+</body>
+</html>
+\end{lstlisting}
+
+La estructura del la aplicación web queda:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{images/estructura.jpg}
+\caption{Estructura Página Web}
+\end{figure}
+
+Los demás archivos se pueden ver en 
+Github: \url{https://github.com/sanic16/Apli1_gui/tree/main/GUI/browser}, donde también está alojado todo el proyecto.
+
+\section*{Semana, 19 de septiembre - 23 de Septiembre}
 
 
   
