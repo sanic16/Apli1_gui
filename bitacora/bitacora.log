@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.10.3)  24 OCT 2022 19:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.10.3)  25 OCT 2022 05:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,6 +412,14 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
@@ -423,22 +431,22 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `bitacora.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -496,13 +504,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -515,28 +523,28 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (./bitacora.out) (./bitacora.out)
 \@outlinefile=\write3
 \openout3 = `bitacora.out'.
 
 \c@lstlisting=\count309
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 23
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 24
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -544,49 +552,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 87
+Underfull \vbox (badness 10000) detected at line 88
  []
 
 
-Underfull \vbox (badness 10000) detected at line 132
+Underfull \vbox (badness 10000) detected at line 133
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 156
+Underfull \vbox (badness 10000) detected at line 157
  []
 
 [3] [4]
-Underfull \vbox (badness 10000) detected at line 200
+Underfull \vbox (badness 10000) detected at line 201
  []
 
 <images/broker_aws.jpg, id=41, 826.58812pt x 365.86688pt>
 File: images/broker_aws.jpg Graphic file (type jpg)
 <use images/broker_aws.jpg>
-Package pdftex.def Info: images/broker_aws.jpg  used on input line 208.
+Package pdftex.def Info: images/broker_aws.jpg  used on input line 209.
 (pdftex.def)             Requested size: 495.9567pt x 219.52182pt.
 <images/conf_inicial_broker.jpg, id=42, 389.95688pt x 44.41594pt>
 File: images/conf_inicial_broker.jpg Graphic file (type jpg)
 <use images/conf_inicial_broker.jpg>
-Package pdftex.def Info: images/conf_inicial_broker.jpg  used on input line 221
+Package pdftex.def Info: images/conf_inicial_broker.jpg  used on input line 222
 .
 (pdftex.def)             Requested size: 389.95592pt x 44.41582pt.
 [5 <./images/broker_aws.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 <images/prueba_bateria_1.jpg, id=53, 4625.28pt x 3468.96pt>
 File: images/prueba_bateria_1.jpg Graphic file (type jpg)
 <use images/prueba_bateria_1.jpg>
-Package pdftex.def Info: images/prueba_bateria_1.jpg  used on input line 230.
+Package pdftex.def Info: images/prueba_bateria_1.jpg  used on input line 231.
 (pdftex.def)             Requested size: 462.5551pt x 346.91632pt.
 <images/prueba_bateria_2.jpg, id=54, 4625.28pt x 3468.96pt>
 File: images/prueba_bateria_2.jpg Graphic file (type jpg)
 <use images/prueba_bateria_2.jpg>
-Package pdftex.def Info: images/prueba_bateria_2.jpg  used on input line 235.
+Package pdftex.def Info: images/prueba_bateria_2.jpg  used on input line 236.
 (pdftex.def)             Requested size: 462.5551pt x 346.91632pt.
 [6 <./images/conf_inicial_broker.jpg> <./images/prueba_bateria_1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
+Underfull \hbox (badness 10000) in paragraph at lines 239--242
 
  []
 
@@ -594,50 +602,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--241
 <images/esquematico.jpg, id=68, 591.71063pt x 420.82219pt>
 File: images/esquematico.jpg Graphic file (type jpg)
 <use images/esquematico.jpg>
-Package pdftex.def Info: images/esquematico.jpg  used on input line 252.
+Package pdftex.def Info: images/esquematico.jpg  used on input line 253.
 (pdftex.def)             Requested size: 532.53465pt x 378.73647pt.
 
-Overfull \hbox (20.38506pt too wide) in paragraph at lines 252--253
+Overfull \hbox (20.38506pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
 <images/footprint1.jpg, id=69, 828.84656pt x 408.02437pt>
 File: images/footprint1.jpg Graphic file (type jpg)
 <use images/footprint1.jpg>
-Package pdftex.def Info: images/footprint1.jpg  used on input line 259.
+Package pdftex.def Info: images/footprint1.jpg  used on input line 260.
 (pdftex.def)             Requested size: 414.42226pt x 204.01169pt.
 [8 <./images/esquematico.jpg>]
 <images/footprint2.jpg, id=77, 767.86874pt x 428.35031pt>
 File: images/footprint2.jpg Graphic file (type jpg)
 <use images/footprint2.jpg>
-Package pdftex.def Info: images/footprint2.jpg  used on input line 265.
+Package pdftex.def Info: images/footprint2.jpg  used on input line 266.
 (pdftex.def)             Requested size: 383.93343pt x 214.17462pt.
  [9 <./images/footprint1.jpg> <./images/footprint2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 273--276
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
 
  []
 
 
-Overfull \hbox (12.1569pt too wide) in paragraph at lines 293--294
+Overfull \hbox (12.1569pt too wide) in paragraph at lines 294--295
 []\OT1/cmr/m/n/10 Obtener Boots-trap a trav^^Ses de un CDN (Con-tent De-li-very
  Net-work): []$\OT1/cmtt/m/n/10 https : / / cdn . jsdelivr . net / npm / bootst
 rap @
  []
 
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-15.
+16.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 315.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 316.
  [10]
-Overfull \hbox (15.85577pt too wide) in paragraph at lines 331--332
+Overfull \hbox (15.85577pt too wide) in paragraph at lines 332--333
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.85577pt too wide) in paragraph at lines 335--336
+Overfull \hbox (15.85577pt too wide) in paragraph at lines 336--337
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -645,9 +653,100 @@ Overfull \hbox (15.85577pt too wide) in paragraph at lines 335--336
 <images/estructura.jpg, id=201, 329.73187pt x 135.50626pt>
 File: images/estructura.jpg Graphic file (type jpg)
 <use images/estructura.jpg>
-Package pdftex.def Info: images/estructura.jpg  used on input line 453.
+Package pdftex.def Info: images/estructura.jpg  used on input line 454.
 (pdftex.def)             Requested size: 247.29828pt x 101.62943pt.
- [13 <./images/estructura.jpg>] [14] (./bitacora.aux
+<images/app.jpg, id=203, 714.41907pt x 431.36156pt>
+File: images/app.jpg Graphic file (type jpg)
+<use images/app.jpg>
+Package pdftex.def Info: images/app.jpg  used on input line 464.
+(pdftex.def)             Requested size: 535.81299pt x 323.52037pt.
+
+Overfull \hbox (23.66339pt too wide) in paragraph at lines 464--465
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--466
+
+ []
+
+[13 <./images/estructura.jpg>]
+<images/ruteo_pistas.jpg, id=248, 774.64406pt x 577.40718pt>
+File: images/ruteo_pistas.jpg Graphic file (type jpg)
+<use images/ruteo_pistas.jpg>
+Package pdftex.def Info: images/ruteo_pistas.jpg  used on input line 478.
+(pdftex.def)             Requested size: 503.51266pt x 375.31023pt.
+ [14 <./images/app.jpg>]
+<images/pcb.jpg, id=256, 303.0522pt x 196.5744pt>
+File: images/pcb.jpg Graphic file (type jpg)
+<use images/pcb.jpg>
+Package pdftex.def Info: images/pcb.jpg  used on input line 484.
+(pdftex.def)             Requested size: 196.98158pt x 127.77184pt.
+<images/vista_planta.jpg, id=257, 350.81062pt x 240.14719pt>
+File: images/vista_planta.jpg Graphic file (type jpg)
+<use images/vista_planta.jpg>
+Package pdftex.def Info: images/vista_planta.jpg  used on input line 491.
+(pdftex.def)             Requested size: 350.80975pt x 240.14658pt.
+ [15 <./images/ruteo_pistas.jpg> <./images/pcb.jpg>]
+<images/vista_frente.jpg, id=264, 383.18156pt x 185.19188pt>
+File: images/vista_frente.jpg Graphic file (type jpg)
+<use images/vista_frente.jpg>
+Package pdftex.def Info: images/vista_frente.jpg  used on input line 497.
+(pdftex.def)             Requested size: 383.18062pt x 185.1914pt.
+<images/estructura_arduino.jpg, id=266, 203.25937pt x 122.70844pt>
+File: images/estructura_arduino.jpg Graphic file (type jpg)
+<use images/estructura_arduino.jpg>
+Package pdftex.def Info: images/estructura_arduino.jpg  used on input line 508.
+
+(pdftex.def)             Requested size: 203.25887pt x 122.70813pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--510
+
+ []
+
+[16 <./images/vista_planta.jpg> <./images/vista_frente.jpg>]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 5
+23.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 523.
+ [17 <./images/estructura_arduino.jpg>] [18] [19] [20]
+<images/wifi_manager.jpg, id=467, 614.295pt x 93.34875pt>
+File: images/wifi_manager.jpg Graphic file (type jpg)
+<use images/wifi_manager.jpg>
+Package pdftex.def Info: images/wifi_manager.jpg  used on input line 715.
+(pdftex.def)             Requested size: 522.15321pt x 79.3468pt.
+
+Overfull \hbox (10.00362pt too wide) in paragraph at lines 715--716
+ [][] 
+ []
+
+<images/wifi_config1.jpg, id=468, 722.7pt x 1606.0pt>
+File: images/wifi_config1.jpg Graphic file (type jpg)
+<use images/wifi_config1.jpg>
+Package pdftex.def Info: images/wifi_config1.jpg  used on input line 723.
+(pdftex.def)             Requested size: 108.40031pt x 240.8896pt.
+<images/wifi_config2.jpg, id=469, 722.7pt x 1606.0pt>
+File: images/wifi_config2.jpg Graphic file (type jpg)
+<use images/wifi_config2.jpg>
+Package pdftex.def Info: images/wifi_config2.jpg  used on input line 724.
+(pdftex.def)             Requested size: 108.40031pt x 240.8896pt.
+<images/wifi_selection1.jpg, id=470, 722.7pt x 1606.0pt>
+File: images/wifi_selection1.jpg Graphic file (type jpg)
+<use images/wifi_selection1.jpg>
+Package pdftex.def Info: images/wifi_selection1.jpg  used on input line 730.
+(pdftex.def)             Requested size: 108.40031pt x 240.8896pt.
+<images/wifi_selection3.jpg, id=471, 722.7pt x 1606.0pt>
+File: images/wifi_selection3.jpg Graphic file (type jpg)
+<use images/wifi_selection3.jpg>
+Package pdftex.def Info: images/wifi_selection3.jpg  used on input line 731.
+(pdftex.def)             Requested size: 108.40031pt x 240.8896pt.
+[21 <./images/wifi_manager.jpg> <./images/wifi_config1.jpg> <./images/wifi_conf
+ig2.jpg>] [22 <./images/wifi_selection1.jpg> <./images/wifi_selection3.jpg>]
+(./bitacora.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -655,13 +754,13 @@ Package rerunfilecheck Info: File `bitacora.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11487 strings out of 479304
- 171604 string characters out of 5869779
- 561818 words of memory out of 5000000
- 28299 multiletter control sequences out of 15000+600000
+ 11822 strings out of 479304
+ 177247 string characters out of 5869779
+ 563028 words of memory out of 5000000
+ 28417 multiletter control sequences out of 15000+600000
  412432 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,74p,274b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,8n,74p,493b,1818s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -671,10 +770,10 @@ s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on bitacora.pdf (14 pages, 13727517 bytes).
+Output written on bitacora.pdf (22 pages, 14599809 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 182 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 381 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

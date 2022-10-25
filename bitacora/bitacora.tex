@@ -11,6 +11,7 @@
 \usepackage{makecell}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{color}
 
 \title{Bitacora - Domótica}
 \author{
@@ -456,10 +457,281 @@ La estructura del la aplicación web queda:
 
 Los demás archivos se pueden ver en 
 Github: \url{https://github.com/sanic16/Apli1_gui/tree/main/GUI/browser}, donde también está alojado todo el proyecto.
+\\\\
+Por último, la aplicación en funcionamiento queda:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{images/app.jpg}
+\caption{Aplicación web}
+\end{figure}
+
+Ésta es la primera versión de la aplicación, por lo que en el futuro se mejorará.
 
 \section*{Semana, 19 de septiembre - 23 de Septiembre}
+Para esta semana tenemos el diseño de la PCB y su visualización en 3D, además de la explicación de la programación en Arduino del ESP8266.
+
+\subsection*{Diseño PCB}
+Continuando con el esquemático en KiCad, se rutean las pistas y se imprime el PCB en pdf:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{images/ruteo_pistas.jpg}
+\caption{Ruteo de pistas}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{images/pcb.jpg}
+\caption{PCB}
+\end{figure}
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{images/vista_planta.jpg}
+\caption{Visualización 3D - Planta}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{images/vista_frente.jpg}
+\caption{Visualización 3D - Frente}
+\end{figure}
+
+\subsection*{Programación Arduino}
+Para la programación en Arduino se utilizaron varios archivos y el diseño original se obtuvo de este enlace  
+\url{https://www.luisllamas.es/como-usar-mqtt-en-el-esp8266-esp32/}.
+\\\\
+La estructura del proyeto queda como:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{images/estructura_arduino.jpg}
+\caption{Estructura de la programación en Arduino}
+\end{figure}
+El archivo {\color{blue}config.h} solamente contiene los datos de la red WiFi a conectarse y la ip estática a utilizar:
+\begin{lstlisting}[frame=single]
+const char* ssid = "dlink-FC29";
+const char* password = "fuxae77754";
+
+IPAddress ip(192, 168, 1, 66);
+IPAddress gateway(192, 168, 1, 1);
+IPAddress subnet(255, 255, 255, 0);
+\end{lstlisting}
+
+El archivo {\color{blue}ESP8266\_Utils.hpp} contiene la función \verb@void ConnectWiFi_STA(bool useStaticIP = false)@, que es utilizada para conectarse a la red WiFi, no devuelve nada y unicamente recibe un parámetro booleano para indicar si queremos conectarnos usando una ip estática o que el router nos asigne una ip dinámica:
+\begin{lstlisting}[frame=single]
+void ConnectWiFi_STA(bool useStaticIP = false){
+  delay(10);
+  Serial.println("");
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  if (useStaticIP) WiFi.config(ip, gateway, subnet);
+  while(WiFi.status() != WL_CONNECTED){
+    delay(250);
+    Serial.print(".");
+  }
   
+  Serial.println();
+  Serial.print("SSID:\t\t");
+  Serial.println(WiFi.SSID());
+  Serial.print("Hostname: \t");
+  Serial.println(WiFi.hostname());
+  Serial.print("Local IP: \t");
+  Serial.println(WiFi.localIP());
+  Serial.print("Subnet Mask: \t");
+  Serial.println(WiFi.subnetMask());
+  Serial.print("Gateway IP: \t");
+  Serial.println(WiFi.gatewayIP());
+  Serial.print("DNS IP: \t");
+  Serial.println(WiFi.dnsIP());
+  Serial.print("MAC address: \t");
+  Serial.println(WiFi.macAddress());
+}
+\end{lstlisting}
+
+En el archivo {\color{blue}ESP8266\_Utils\_MQTT.hpp} tenemos 3 funciones con un código poco redudante que sirven para conectarnos al Broker MQTT, reconectarnos en caso de desconexión y establece una función callback para el manejo de mensajes en uno o varios topics suscritos:
+
+\begin{lstlisting}[frame=single]
+void InitMqtt(){
+  mqttClient.setServer(MQTT_BROKER_ADRESS, MQTT_PORT);
+  SuscribeMqtt();
+  mqttClient.setCallback(OnMqttReceived);
+}
+
+void ConnectMqtt(){
+  while(!mqttClient.connected()){
+    Serial.print("Starting MQTT connection...");
+    if(mqttClient.connect(MQTT_CLIENT_NAME, MQTT_USER, MQTT_PASSWORD)){
+      SuscribeMqtt();
+    }else{
+      Serial.print("Failed MQTT connection, rc=");
+      Serial.print(mqttClient.state());
+      Serial.println(" try again in 5 seconds");
+
+      delay(5000);
+    }
+  }
+}
+void HandleMqtt(){
+  if(!mqttClient.connected()){
+    ConnectMqtt();
+  }
+  mqttClient.loop();
+}
+\end{lstlisting}
+
+El último archivo relacionado a la comunicación con el broker es {\color{blue}MQTT.hpp}, que contiene las variables para conectarnos al Broker y funciones para recibir y enviar mensajes a topics:
+
+\begin{lstlisting}[frame=single]
+const char* MQTT_BROKER_ADRESS = "44.196.164.116";
+const uint16_t MQTT_PORT = 1883;
+const char* MQTT_CLIENT_NAME = "ESP8266Client_1";
+const char* MQTT_USER = "alejandro";
+const char* MQTT_PASSWORD = "1234";
+
+WiFiClient espClient;
+PubSubClient mqttClient(espClient);
+
+void SuscribeMqtt(){
+  mqttClient.subscribe("leds");
+}
+
+String content = "";
+void OnMqttReceived(char* topic, byte* payload, unsigned int length){
+  Serial.print("Received on");Serial.print(topic);Serial.print(": ");
+
+  content = "";
+  for (size_t i = 0; i < length; i++){
+    content.concat((char) payload[i]);
+  }
+  int sts_on = content.indexOf("ON");
+  int sts_off = content.indexOf("OFF");
+  
+  int led5 = content.indexOf("Led5");
+  if(led5>-1){
+    if (sts_on>-1) digitalWrite(leds[0], HIGH);
+    if (sts_off>-1) digitalWrite(leds[0], LOW);
+  }
+
+  int led4 = content.indexOf("Led4");
+  if(led4>-1){
+    if (sts_on>-1) digitalWrite(leds[1], HIGH);
+    if (sts_off>-1) digitalWrite(leds[1], LOW);
+  }
+
+  int led0 = content.indexOf("Led0");
+  if(led0>-1){
+    if (sts_on>-1) digitalWrite(leds[2], HIGH);
+    if (sts_off>-1) digitalWrite(leds[2], LOW);
+  }
+
+  int led2 = content.indexOf("Led2");
+  if(led2>-1){
+    if (sts_on>-1) digitalWrite(leds[3], HIGH);
+    if (sts_off>-1) digitalWrite(leds[3], LOW);
+  }
+  
+  int led14 = content.indexOf("Led14");
+  if(led14>-1){
+    if (sts_on>-1) digitalWrite(leds[4], HIGH);
+    if (sts_off>-1) digitalWrite(leds[4], LOW);
+  }
+
+  int led12 = content.indexOf("Led12");
+  if(led12>-1){
+    if (sts_on>-1) digitalWrite(leds[5], HIGH);
+    if (sts_off>-1) digitalWrite(leds[5], LOW);
+  }
+
+  int led13 = content.indexOf("Led13");
+  if(led13>-1){
+    if (sts_on>-1) digitalWrite(leds[6], HIGH);
+    if (sts_off>-1) digitalWrite(leds[6], LOW);
+  }
+
+  int led15 = content.indexOf("Led15");
+  if(led15>-1){
+    if (sts_on>-1) digitalWrite(leds[7], HIGH);
+    if (sts_off>-1) digitalWrite(leds[7], LOW);
+  }
+  Serial.println();
+  
+  
+}
+
+String payload;
+void PublishMqtt(unsigned long data){
+  payload = "";
+  payload = String(data);
+  mqttClient.publish("leds", (char*)payload.c_str());
+}
+\end{lstlisting}
+
+El archivo {\color{blue} Leds\_setup.hpp} solamente contiene la configuración de pines de salida:
+\begin{lstlisting}[frame=single]
+int leds[] = {5, 4, 0, 2, 14, 12, 13, 15};
+
+void led_setup(void){
+ for(int i=0; i<=7; i++){
+  pinMode(leds[i], OUTPUT);
+ }
+}
+\end{lstlisting}
+
+Por último, el archivo principal que contiene las funciones \verb@void setup()@, \verb@void loop()@ y el uso de las funciones de los otros archivos, es {\color{blue} mqtt\_leds.ino}:
+\begin{lstlisting}[frame=single]
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+
+#include "config.h"
+#include "ESP8266_Utils.hpp"
+#include "Leds_setup.hpp"
+#include "MQTT.hpp"
+#include "ESP8266_Utils_MQTT.hpp"
+
+
+
+void setup(void){
+  
+  Serial.begin(115200);
+  led_setup();
+  ConnectWiFi_STA(true);
+
+  InitMqtt();
+  
+}
+
+void loop(void){
+  HandleMqtt();
+  
+}
+\end{lstlisting}
+
+\subsection*{Conectando a red WiFi utilizado un portal}
+No es para nada práctico y mucho menos comercial tener que colocar las credenciales de conexión WiFi por medio de programación, a menos que sea para depurar. En general, lo ideal es tener una funcionalidad para seleccionar la red a la que nos queremos conectar sin necesidad de conectar un cable, y para eso vamos a utilizar la librería WiFiManager, que nos permite conectarnos desde un portal web, se puede encontrar en las librerías de Arduino como WiFiManager:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.85]{images/wifi_manager.jpg}
+\caption{WiFi Manager}
+\end{figure}
+
+Une vez utilizada la librería, una prueba simple es como se muestra a continuación:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.15]{images/wifi_config1.jpg}
+\includegraphics[scale=.15]{images/wifi_config2.jpg}
+\caption{Se selecciona la red con el nombre que le hayamos dado en Arduino}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.15]{images/wifi_selection1.jpg}
+\includegraphics[scale=.15]{images/wifi_selection3.jpg}
+\caption{Se selecciona la red a la que nos queremos conectar y se ingresa su contraseña}
+\end{figure}
+
+Este es un ejemplo que está disponible al descargar la librería, en la próxima bitacora se intentará incorporar la librería con el código del proyecto y ver si hay compatiblidad.
 
 \end{document}
