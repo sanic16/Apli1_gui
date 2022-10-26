@@ -8,7 +8,7 @@ WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 
 void SuscribeMqtt(){
-  mqttClient.subscribe("hello");
+  mqttClient.subscribe("leds");
 }
 
 String content = "";
@@ -78,5 +78,5 @@ String payload;
 void PublishMqtt(unsigned long data){
   payload = "";
   payload = String(data);
-  mqttClient.publish("hello", (char*)payload.c_str());
+  mqttClient.publish("leds", (char*)payload.c_str());
 }

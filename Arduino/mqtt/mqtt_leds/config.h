@@ -1,5 +1,5 @@
 const char* ssid = "dlink-FC29";
-const char* password = "fuxae77754";
+const char* password = "fuxae777574";
 
 IPAddress ip(192, 168, 1, 66);
 IPAddress gateway(192, 168, 1, 1);
