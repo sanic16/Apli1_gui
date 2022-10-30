@@ -1,8 +1,8 @@
 const char* MQTT_BROKER_ADRESS = "44.196.164.116";
 const uint16_t MQTT_PORT = 1883;
 const char* MQTT_CLIENT_NAME = "ESP8266Client_1";
-const char* MQTT_USER = "alejandro";
-const char* MQTT_PASSWORD = "1234";
+const char* MQTT_USER = "julio";
+const char* MQTT_PASSWORD = "borden16";
 
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
